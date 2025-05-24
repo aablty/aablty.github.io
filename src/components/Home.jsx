@@ -1,6 +1,6 @@
 export default function Home() {
   return (
-    <div className="home">
+    <div className="container">
       <h1>Welcome to My Portfolio</h1>
       <p>
         Hello! I'm a software developer with a passion for creating innovative

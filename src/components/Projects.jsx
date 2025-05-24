@@ -1,6 +1,6 @@
 export default function Projects() {
   return (
-    <div className="projects">
+    <div className="container">
       <h1>My Projects</h1>
       <p>
         Here are some of the projects I've worked on. Each project showcases my
@@ -8,17 +8,20 @@ export default function Projects() {
       </p>
       <ul>
         <li>
-          <strong>Project 1:</strong> A web application that allows users to
-          track their daily tasks and manage their time effectively.
+          <strong>Project 1:</strong> Lorem ipsum dolor sit amet, consectetur
+          adipisicing elit. Tempore libero adipisci nostrum commodi.
         </li>
         <li>
-          <strong>Project 2:</strong> A mobile app that helps users learn new
-          languages through interactive lessons and quizzes.
+          <strong>Project 2:</strong> Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Excepturi vel reprehenderit, et ducimus quam sed
+          iure dolor quis ad, magni eum expedita, quibusdam accusamus corrupti
+          nemo ipsum laboriosam recusandae ab.
         </li>
         <li>
-          <strong>Project 3:</strong> An open-source library for data
-          visualization that simplifies the process of creating charts and
-          graphs.
+          <strong>Project 3:</strong> Lorem ipsum, dolor sit amet consectetur
+          adipisicing elit. Sunt dicta consequatur nam consequuntur natus
+          laboriosam asperiores nesciunt officiis debitis sed maxime, temporibus
+          nostrum, nobis ut, necessitatibus inventore dolorum aliquam eius.
         </li>
       </ul>
     </div>

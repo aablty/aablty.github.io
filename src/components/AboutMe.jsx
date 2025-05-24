@@ -1,6 +1,6 @@
 export default function AboutMe() {
     return (
-        <div className="about-me">
+        <div className="container">
             <h1>About Me</h1>
             <p>
                 Hello! I'm a software developer with a passion for creating

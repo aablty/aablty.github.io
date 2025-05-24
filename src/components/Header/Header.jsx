@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 import logo from "@/assets/images/logo.svg";
 import en from "@/assets/locales/en.json";
@@ -26,9 +27,9 @@ export default function Header() {
             <span className="logo_name">aablty</span>
           </a>
           <nav className="header_nav">
-            <a href="/">{translations[locale].home}</a>
-            <a href="/projects">{translations[locale].projects}</a>
-            <a href="/about-me">{translations[locale].about_me}</a>
+            <Link to="/">{translations[locale].home}</Link>
+            <Link to="/projects">{translations[locale].projects}</Link>
+            <Link to="/about-me">{translations[locale].about_me}</Link>
           </nav>
           <button
             className="locale"

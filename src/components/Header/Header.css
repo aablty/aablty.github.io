@@ -22,12 +22,12 @@ a {
     color: inherit;
 }
 
-.logo__img {
+.logo_img {
     aspect-ratio: 1;
     width: 24px;
 }
 
-.logo__name {
+.logo_name {
     font-weight: 700;
 }
 

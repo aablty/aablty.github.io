@@ -13,13 +13,14 @@ export function LocaleProvider({ children }) {
   const [locale, setLocale] = useState(
     () => localStorage.getItem("locale") || defaultLocale
   );
-  const [translations, setTranslations] = useState(allTranslations[locale]);
 
   const switchLocale = (newLocale) => {
     localStorage.setItem("locale", newLocale);
     setLocale(newLocale);
-    setTranslations(allTranslations[newLocale]);
   };
+
+  const translations =
+    allTranslations[locale] || allTranslations[defaultLocale];
 
   return (
     <LocaleContext.Provider value={{ locale, translations, switchLocale }}>

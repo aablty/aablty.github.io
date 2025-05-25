@@ -1,11 +1,11 @@
+import useDocumentTitle from "../tools/useDocumentTitle";
+
 export default function Projects() {
+  useDocumentTitle("projects");
+
   return (
-    <div className="container">
+    <div className="container content">
       <h1>My Projects</h1>
-      <p>
-        Here are some of the projects I've worked on. Each project showcases my
-        skills in software development and my ability to solve complex problems.
-      </p>
       <ul>
         <li>
           <strong>Project 1:</strong> Lorem ipsum dolor sit amet, consectetur

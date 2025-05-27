@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 32px;
+  gap: 2rem;
   flex-wrap: wrap;
 }
 
@@ -39,7 +39,7 @@
   position: absolute;
   width: 35vmin;
   top: 15%;
-  left: -15%;
+  left: -7%;
   z-index: 1;
   aspect-ratio: 1;
   transform: scaleX(-1);
@@ -47,13 +47,14 @@
 
 .intro_avatar {
   position: relative;
-  width: 450px;
+  left: 1rem;
+  width: 460px;
   z-index: 2;
   border-bottom: 1px solid var(--primary);
 }
 
 .intro_status {
-  padding: 8px;
+  padding: 0.5rem;
   border: 1px solid var(--gray);
   color: var(--gray);
   margin: 0 auto;
@@ -63,17 +64,37 @@
   position: relative;
   top: -1px;
   z-index: 5;
-  gap: 8px;
-  font-weight: 600;
+  
+  font-weight: 500;
 }
 
 .intro_status::before {
   content: "";
   display: inline-block;
   aspect-ratio: 1;
-  width: 16px;
+  width: 0.9rem;
   background-color: var(--primary-op);
   border: 1px solid var(--primary);
+  margin-right: 0.5rem;
+}
+
+.intro_status::after {
+  content: "";
+  display: inline-block;
+  width: 1rem;
+  overflow: hidden;
+  vertical-align: bottom;
+  animation: idle 1.25s steps(2, end) infinite;
+  margin-left: 1px;
+}
+
+@keyframes idle {
+  0% {
+    content: "";
+  }
+  100% {
+    content: "_";
+  }
 }
 
 .intro .dots {
@@ -81,6 +102,7 @@
   top: 55%;
   width: 14vmin;
   left: 65%;
-  z-index: 0;
+  z-index: 4;
   fill: var(--primary);
 }
+

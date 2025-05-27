@@ -9,11 +9,14 @@
 .header {
   padding-top: 1.5rem;
   padding-bottom: 1rem;
-  background-color: var(--background);
+  background-color: var(--background-op);
+  backdrop-filter: blur(10px); 
+  -webkit-backdrop-filter: blur(10px); 
   position: fixed;
   top: 0;
   width: 100%;
-  border-bottom: 1px solid var(--gray-op);
+  z-index: 1000;
+  /* border-bottom: 1px solid var(--gray-op); */
 }
 
 .logo {

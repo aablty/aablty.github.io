@@ -14,8 +14,8 @@ export default function IntroSection() {
           and <span> full-stack </span> devloper
         </h1>
         <p className="intro_description">
-          An internet shaman channeling the sacred memes <br /> to craft
-          responsive websites.
+          An internet shaman channeling the sacred memes to craft responsive
+          websites.
         </p>
         <Button className="primary" href="/#contacts">
           Contact Me
@@ -24,7 +24,7 @@ export default function IntroSection() {
       <div className="intro_composition">
         <img className="intro_logo" src={logo_outline} />
         <img src={avatar} className="intro_avatar" />
-        <div className="intro_status">Something is loading...</div>
+        <div className="intro_status">junior dev in progress</div>
         <Dots size={5} />
       </div>
     </section>

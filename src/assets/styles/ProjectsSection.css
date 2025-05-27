@@ -1,0 +1,23 @@
+.projects_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+  gap: 45rem;
+}
+
+.projects_link {
+  text-decoration: underline;
+}
+.projects_link:hover {
+  color: var(--primary);
+}
+
+.project_list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  align-items: start;
+  margin-top: 3rem;
+}

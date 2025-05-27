@@ -1,0 +1,33 @@
+.skill-block {
+  margin-bottom: 1rem;
+  border: 1px solid var(--gray);
+  display: inline-block;
+  max-width: 18.75rem;
+  min-width: 12.5rem;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0;
+}
+
+.skill-block_title {
+  font-weight: 600;
+  padding: 0.5rem;
+  border-bottom: 1px solid var(--gray);
+}
+
+.skill-block_items {
+  padding: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: start;
+  align-items: start;
+  color: var(--gray);
+}
+
+.skill-block_item::before {
+  content: '•';
+  color: var(--primary);
+}
+
+

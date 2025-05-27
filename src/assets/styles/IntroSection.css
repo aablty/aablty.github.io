@@ -84,7 +84,7 @@
   width: 1rem;
   overflow: hidden;
   vertical-align: bottom;
-  animation: idle 1.25s steps(2, end) infinite;
+  animation: idle 1.25s infinite;
   margin-left: 1px;
 }
 

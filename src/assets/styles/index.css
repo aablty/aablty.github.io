@@ -94,6 +94,14 @@ summary {
   vertical-align: baseline;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
 
 img,
 picture {
@@ -110,20 +118,16 @@ figure {
   unicode-bidi: isolate;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
+section {
+  width: 100%;
+  display: block;
+  unicode-bidi: isolate;
 }
 
 .dots {
   width: 10vmin;
   height: auto;
   fill: var(--gray);
-}
-
-section {
-  display: block;
-  unicode-bidi: isolate;
 }
 
 .container {
@@ -138,7 +142,7 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6rem;
+  gap: 8rem;
 }
 
 @media (max-width: 1024px) {

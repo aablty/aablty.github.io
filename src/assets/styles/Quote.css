@@ -37,11 +37,12 @@
   position: absolute;
   color: var(--gray);
   border: 1px solid var(--gray);
-  padding: 0.75rem;
+  padding: 0.75rem 0.5rem 0.5rem 0.5rem;
   right: -1px;
   font-size: 1rem;
 }
 
 .quote_author::before {
-  content: "- ";
+  content: "-";
+  margin-right: 4px;
 }

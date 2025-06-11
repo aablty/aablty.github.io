@@ -1,5 +1,5 @@
 // React Router
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 
 // Contexts
 import { LocaleProvider } from "./contexts";
@@ -12,7 +12,7 @@ import { Projects, AboutMe, Home } from "./pages";
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <LocaleProvider>
         <Header />
         <>
@@ -24,6 +24,6 @@ export default function App() {
         </>
         <Footer />
       </LocaleProvider>
-    </BrowserRouter>
+    </HashRouter>
   );
 }

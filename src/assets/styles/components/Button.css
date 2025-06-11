@@ -1,0 +1,30 @@
+/* ===== BUTTON BASE ===== */
+.button {
+  display: inline-block;
+  padding: 8px 16px;
+  font-weight: 500;
+  color: var(--white);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+}
+
+/* ===== BUTTON VARIANTS ===== */
+.button.primary {
+  border: 1px solid var(--primary);
+}
+
+.button.primary:hover {
+  background-color: var(--primary-op);
+}
+
+.button.gray {
+  border: 1px solid var(--gray);
+}
+
+.button.gray:hover {
+  background-color: var(--gray-op);
+}

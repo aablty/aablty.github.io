@@ -3,7 +3,7 @@
   font-family: "JetBrains Mono";
   font-style: normal;
   font-weight: 400;
-  src: url("@/assets/fonts/jetbrains-mono-v20-latin-regular.woff2")
+  src: url("../../assets/fonts/jetbrains-mono-v20-latin-regular.woff2")
     format("woff2");
 }
 
@@ -12,7 +12,8 @@
   font-family: "JetBrains Mono";
   font-style: normal;
   font-weight: 500;
-  src: url("@/assets/fonts/jetbrains-mono-v20-latin-500.woff2") format("woff2");
+  src: url("../../assets/fonts/jetbrains-mono-v20-latin-500.woff2")
+    format("woff2");
 }
 
 @font-face {
@@ -20,7 +21,8 @@
   font-family: "JetBrains Mono";
   font-style: normal;
   font-weight: 600;
-  src: url("@/assets/fonts/jetbrains-mono-v20-latin-600.woff2") format("woff2");
+  src: url("../../assets/fonts/jetbrains-mono-v20-latin-600.woff2")
+    format("woff2");
 }
 
 @font-face {
@@ -28,15 +30,16 @@
   font-family: "JetBrains Mono";
   font-style: normal;
   font-weight: 700;
-  src: url("@/assets/fonts/jetbrains-mono-v20-latin-700.woff2") format("woff2");
+  src: url("../../assets/fonts/jetbrains-mono-v20-latin-700.woff2")
+    format("woff2");
 }
 
 :root {
   --background: hsl(218 12% 18%);
   --background-op: hsl(218 12% 18%/0.95);
 
-  --primary: hsl(213 68% 75%);
-  --primary-op: hsl(213 69% 75%/0.1);
+  --primary: hsl(91 91% 74%);
+  --primary-op: hsl(91 91% 74%/0.1);
 
   --gray: hsl(219 14% 71%);
   --gray-op: hsl(219 14% 71%/0.1);
@@ -52,7 +55,7 @@
   background-color: var(--background);
 
   font-synthesis: none;
-  text-rendering: optimizeLegibility;
+  text-rendering: optimizeSpeed;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -94,6 +97,17 @@ summary {
   vertical-align: baseline;
 }
 
+/* ===== OVERFLOW PREVENTION ===== */
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+* {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
 a {
   text-decoration: none;
   color: inherit;
@@ -113,8 +127,8 @@ figure {
   display: block;
   margin-block-start: 1em;
   margin-block-end: 1em;
-  margin-inline-start: 40px;
-  margin-inline-end: 40px;
+  margin-inline-start: 2.5rem;
+  margin-inline-end: 2.5rem;
   unicode-bidi: isolate;
 }
 
@@ -124,20 +138,17 @@ section {
   unicode-bidi: isolate;
 }
 
-.dots {
-  width: 10vmin;
-  height: auto;
-  fill: var(--gray);
-}
-
+/* ===== LAYOUT ===== */
 .container {
+  width: 100%;
   max-width: 1024px;
   margin: 0 auto;
   position: relative;
+  overflow-x: hidden;
 }
 
 .content {
-  margin-top: 6rem;
+  margin-top: 7rem;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -145,8 +156,33 @@ section {
   gap: 8rem;
 }
 
+/* ===== LOGO ===== */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: inherit;
+}
+
+.logo_img {
+  aspect-ratio: 1;
+  width: 1.5rem;
+}
+
+.logo_name {
+  font-weight: 700;
+}
+
+/* ===== MEDIA QUERIES ===== */
 @media (max-width: 1024px) {
   .container {
     padding: 0 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .content {
+    margin-top: 6rem;
+    gap: 6rem;
   }
 }

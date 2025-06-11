@@ -1,0 +1,32 @@
+/* ===== CONTACTS SECTION ===== */
+.contacts {
+  width: 100%;
+  max-width: 100%;
+}
+
+.contacts_content {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.contacts_description {
+  color: var(--gray);
+  max-width: 20rem;
+  line-height: 1.5;
+}
+
+/* ===== MEDIA QUERIES ===== */
+@media (max-width: 768px) {
+  .contacts_content {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .contacts_description {
+    max-width: 100%;
+  }
+}

@@ -1,0 +1,75 @@
+/* ===== PROJECT CARD ===== */
+.project {
+  border: 1px solid var(--gray);
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.project_image {
+  border-bottom: 1px solid var(--gray);
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  object-fit: cover;
+}
+
+.placeholder {
+  font-size: 1.5rem;
+  color: var(--gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project_logo {
+  border-bottom: 1px solid var(--gray);
+  aspect-ratio: 16 / 9;
+  height: 100%;
+  padding: 2rem;
+}
+
+
+/* ===== PROJECT CONTENT ===== */
+.project_stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  color: var(--gray);
+  padding: 8px;
+  border-bottom: 1px solid var(--gray);
+}
+
+.project_content {
+  padding: 16px;
+}
+
+.project_name {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.project_description {
+  color: var(--gray);
+  margin: 16px 0;
+  line-height: 1.5;
+}
+
+.project_links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* ===== MEDIA QUERIES ===== */
+@media (max-width: 768px) {
+  .project_name {
+    font-size: 20px;
+  }
+
+  .project_content {
+    padding: 12px;
+  }
+
+  .project_description {
+    margin: 12px 0;
+  }
+}

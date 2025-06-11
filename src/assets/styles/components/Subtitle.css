@@ -1,0 +1,43 @@
+/* ===== SUBTITLE BASE ===== */
+.subtitle {
+  font-size: 2rem;
+  font-weight: 500;
+  position: relative;
+  float: none;
+  clear: both;
+  display: inline-block;
+}
+
+.subtitle::before {
+  content: "$";
+  color: var(--primary);
+}
+
+.subtitle::after {
+  content: "";
+  display: block;
+  width: min(10vw, 100px);
+  height: 1px;
+  background-color: var(--primary);
+  position: absolute;
+  transform: translate(100%, -50%);
+  right: -1rem;
+  top: 50%;
+}
+
+/* ===== MEDIA QUERIES ===== */
+@media (max-width: 768px) {
+  .subtitle::after {
+    width: min(8vw, 60px);
+  }
+}
+
+@media (max-width: 305px) {
+  .subtitle::after {
+    display: none;
+  }
+
+  .subtitle {
+    font-size: 1.75rem;
+  }
+}

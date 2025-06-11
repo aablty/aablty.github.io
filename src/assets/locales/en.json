@@ -1,5 +1,32 @@
 {
   "home": "home",
   "projects": "projects",
-  "about_me": "about-me"
+  "about_me": "about-me",
+  
+  "intro_title": "aablty is a full-stack and Python developer",
+  "intro_description": "Building designs that look good and work smart — a creative tech combo.",
+  "status": "junior dev in progress",
+
+  "contact_me": "Contact Me",
+  "cv": "Resume",
+
+  "quote": "I’m not a psychopath, I’m a high functioning sociopath.",
+  "quote_author": "Sherlock",
+  
+  "skills": "skills",
+  "skills_langs": "Languages",
+  "skills_dbs": "Databases",
+  "skills_fws": "Frameworks",
+  "skills_tools": "Tools",
+
+  "projects_title": "projects",
+  "view_all": "View all",
+
+
+  "contacts": "contacts",
+  "contacts_description": "I'm open to freelance opportunities. If you have any questions, project ideas, or just want to connect — feel free to reach out!",
+
+
+  "footer_description": "Full-stack and Python developer from Kazakhstan",
+  "copyright": "© 2025 aablty. All rights reserved."
 }

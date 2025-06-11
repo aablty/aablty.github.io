@@ -1,0 +1,75 @@
+/* ===== QUOTE CONTAINER ===== */
+.quote {
+  border: 1px solid var(--gray);
+  position: relative;
+  margin: 0;
+  max-width: 100%;
+}
+
+/* ===== QUOTE DECORATIONS ===== */
+.quote::before,
+.quote::after {
+  content: '"';
+  position: absolute;
+  color: var(--gray);
+  font-size: 4rem;
+  font-weight: 700;
+  background-image: linear-gradient(var(--background), var(--background));
+  background-size: 100% 40%;
+  background-repeat: no-repeat;
+}
+
+.quote::before {
+  top: -32px;
+  left: 16px;
+}
+
+.quote::after {
+  bottom: -64px;
+  right: 16px;
+}
+
+/* ===== QUOTE CONTENT ===== */
+.quote_text {
+  padding: 2rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  background-color: var(--background);
+}
+
+.quote_author {
+  position: absolute;
+  color: var(--gray);
+  border: 1px solid var(--gray);
+  padding: 0.75rem 0.5rem 0.5rem 0.5rem;
+  right: -1px;
+  font-size: 1rem;
+}
+
+.quote_author::before {
+  content: "-";
+  margin-right: 4px;
+}
+
+/* ===== MEDIA QUERIES ===== */
+@media (max-width: 768px) {
+  .quote_text {
+    padding: 1.5rem;
+    font-size: 1.25rem;
+  }
+
+  .quote::before,
+  .quote::after {
+    font-size: 3rem;
+  }
+
+  .quote::before {
+    top: -24px;
+    left: 12px;
+  }
+
+  .quote::after {
+    bottom: -48px;
+    right: 12px;
+  }
+}

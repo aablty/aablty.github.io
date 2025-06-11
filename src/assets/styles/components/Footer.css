@@ -1,0 +1,48 @@
+/* ===== FOOTER CONTAINER ===== */
+.footer {
+  width: 100%;
+  border-top: 1px solid var(--gray-op);
+  margin-top: 8rem;
+  padding-top: 2.5rem;
+  padding-bottom: 1rem;
+}
+
+/* ===== MEDIA LINKS ===== */
+.media_list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.media {
+  display: flex;
+  width: 32px;
+  aspect-ratio: 1;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.media:hover {
+  transform: scale(1.1);
+}
+
+.media_icon {
+  width: 80%;
+  aspect-ratio: 1;
+  transition: filter 0.2s ease;
+}
+
+.media_icon:hover {
+  filter: brightness(0) invert(1);
+}
+
+/* ===== COPYRIGHT ===== */
+.copyright {
+  color: var(--gray);
+  text-align: center;
+}
+

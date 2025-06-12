@@ -29,7 +29,7 @@ export default function IntroSection() {
         </h1>
         <p className="intro_description">{translations.intro_description}</p>
         <div className="intro_buttons">
-          <Button href="/#contacts">{translations.contact_me}</Button>
+          <Button href="#contacts">{translations.contact_me}</Button>
           <Button
             color="gray"
             href="https://drive.google.com/file/d/1PozYMISDsK4QzWRvSJiMvstRSB_OZh0i"

@@ -94,7 +94,7 @@
   transform: rotate(180deg);
 }
 
-.hamburger.active span:nth-child(1) { 
+.hamburger.active span:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
 
@@ -114,6 +114,8 @@
   right: -100%;
   width: 280px;
   height: 100vh;
+  height: 100dvh;
+  height: 100svh; 
   background-color: var(--background);
   transition: right 0.3s ease;
   z-index: 1000;
@@ -121,6 +123,7 @@
   flex-direction: column;
   padding: 6rem 2rem 2rem;
   gap: 2rem;
+  overflow-y: auto; 
 }
 
 .mobile_menu.open {
@@ -213,6 +216,8 @@
   left: 0;
   width: 100vw;
   height: 100vh;
+  height: 100dvh;
+  height: 100svh;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 999;
 }

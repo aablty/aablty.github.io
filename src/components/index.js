@@ -1,6 +1,7 @@
 // UI Components
 export { default as Button } from "./Button";
 export { default as Subtitle } from "./Subtitle";
+export { default as Path } from "./Path";
 
 // Layout Components
 export { default as Header } from "./Header";

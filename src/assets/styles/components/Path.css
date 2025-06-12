@@ -1,0 +1,20 @@
+.path {
+  align-self: start;
+  display: block;
+  width: 100%;
+}
+
+.path_name {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.path_name::before {
+  content: "/";
+  color: var(--primary);
+}
+
+.path_description {
+  color: var(--gray);
+  margin-top: 1rem;
+}

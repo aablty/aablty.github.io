@@ -39,3 +39,13 @@ export const projects = [
     ],
   },
 ];
+
+export const small = [];
+
+export const facts = [
+  "lorem ipsum dolor sit amet, consectetur",
+  "adipiscing elit sed do eiusmod tempor",
+  "incididunt ut labore et dolore magna",
+  "duis aute irure dolor in reprehenderit",
+  "in voluptate velit esse cillum dolore",
+];

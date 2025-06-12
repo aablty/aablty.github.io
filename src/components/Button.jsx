@@ -1,7 +1,7 @@
 // Styles
 import "../assets/styles/components/Button.css";
 
-export default function Button({ children, color = "primary", href = "" }) {
+export default function Button({ children, color = "primary", href = "", onClick }) {
   const isInternalLink = href.startsWith("#") || href.startsWith("/");
 
   return (
@@ -10,6 +10,7 @@ export default function Button({ children, color = "primary", href = "" }) {
       href={href}
       target={isInternalLink ? "_self" : "_blank"}
       rel={isInternalLink ? undefined : "noopener noreferrer"}
+      onClick={onClick}
     >
       {children}
     </a>

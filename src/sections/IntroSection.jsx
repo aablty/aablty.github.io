@@ -13,6 +13,14 @@ import "../assets/styles/sections/IntroSection.css";
 export default function IntroSection() {
   const { translations } = useLocale();
 
+  const handleScrollToContacts = (e) => {
+    e.preventDefault(); 
+    const element = document.getElementById("contacts");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section className="intro">
       <div className="intro_content">
@@ -29,7 +37,9 @@ export default function IntroSection() {
         </h1>
         <p className="intro_description">{translations.intro_description}</p>
         <div className="intro_buttons">
-          <Button href="#contacts">{translations.contact_me}</Button>
+          <Button onClick={handleScrollToContacts}>
+            {translations.contact_me}
+          </Button>
           <Button
             color="gray"
             href="https://drive.google.com/file/d/1PozYMISDsK4QzWRvSJiMvstRSB_OZh0i"

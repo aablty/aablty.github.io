@@ -51,8 +51,8 @@
 .form_submit {
   width: 100%;
   padding: 0.75rem 0;
-  background-color: var(--primary-op);
   color: var(--white);
+  background-color: var(--background);
   border: 1px solid var(--primary);
   cursor: pointer;
   font-family: inherit;
@@ -62,7 +62,7 @@
 }
 
 .form_submit:hover:not(:disabled) {
-  background-color: var(--primary-hover);
+  background-color: var(--primary-op);
 }
 
 .form_submit:disabled {

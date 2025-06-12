@@ -8,7 +8,12 @@ import { useLocale } from "../contexts";
 import { Path } from "../components";
 
 // Sections
-import { AboutSection, SkillsSection, FactsSection } from "../sections";
+import {
+  AboutSection,
+  SkillsSection,
+  EducationSection,
+  FactsSection,
+} from "../sections";
 
 export default function AboutMe() {
   useDocumentTitle("about-me");
@@ -18,9 +23,10 @@ export default function AboutMe() {
     <>
       <Path>
         {translations.about_me + "+" + translations.about_me_description}
-      </Path>
+      </Path>{" "}
       <AboutSection parent="about-me" />
       <SkillsSection parent="about-me" />
+      <EducationSection />
       <FactsSection />
     </>
   );

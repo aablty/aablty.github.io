@@ -14,10 +14,10 @@ export default function IntroSection() {
   const { translations } = useLocale();
 
   const handleScrollToContacts = (e) => {
-    e.preventDefault(); 
+    e.preventDefault();
     const element = document.getElementById("contacts");
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
 

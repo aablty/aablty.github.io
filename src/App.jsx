@@ -15,13 +15,13 @@ export default function App() {
     <HashRouter>
       <LocaleProvider>
         <Header />
-        <>
+        <div className="container content">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/about-me" element={<AboutMe />} />
           </Routes>
-        </>
+        </div>
         <Footer />
       </LocaleProvider>
     </HashRouter>

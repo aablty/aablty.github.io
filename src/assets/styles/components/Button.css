@@ -2,7 +2,7 @@
 .button {
   display: inline-block;
   padding: 8px 16px;
-  font-weight: 500;
+  font-weight: 400;
   color: var(--white);
   white-space: nowrap;
   overflow: hidden;
@@ -15,6 +15,10 @@
 /* ===== BUTTON VARIANTS ===== */
 .button.primary {
   border: 1px solid var(--primary);
+}
+
+.button.primary::after {
+  content: " ->"
 }
 
 .button.primary:hover {

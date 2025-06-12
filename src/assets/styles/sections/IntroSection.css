@@ -66,6 +66,8 @@
   z-index: 2;
   position: relative;
   border-bottom: 1px solid var(--primary);
+  min-width: 15rem;
+  max-width: 30rem;
 }
 
 /* ===== INTRO STATUS ===== */
@@ -124,10 +126,6 @@
   .intro {
     flex-direction: column;
     text-align: center;
-  }
-
-  .intro_avatar {
-    min-width: 15rem;
   }
 
   .intro_circle {

@@ -186,3 +186,12 @@ section {
     gap: 6rem;
   }
 }
+
+/* ===== GLOBAL SCALING FOR SMALL SCREENS ===== */
+@media (max-width: 350px) {
+  html {
+    transform: scale(calc(100vw / 350));
+    transform-origin: top left;
+    width: 350px;
+  }
+}

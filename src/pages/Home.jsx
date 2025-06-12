@@ -9,6 +9,7 @@ import {
   IntroSection,
   SkillsSection,
   ProjectsSection,
+  AboutSection,
   ContactsSection,
 } from "../sections";
 
@@ -16,12 +17,13 @@ export default function Home() {
   useDocumentTitle("home");
 
   return (
-    <div className="container content">
+    <>
       <IntroSection />
       <Quote />
       <ProjectsSection />
       <SkillsSection />
+      <AboutSection />
       <ContactsSection />
-    </div>
+    </>
   );
 }

@@ -2,31 +2,41 @@
   "home": "home",
   "projects": "projects",
   "about_me": "about-me",
-  
   "intro_title": "aablty is a full-stack and Python developer",
   "intro_description": "Building designs that look good and work smart — a creative tech combo.",
   "status": "junior dev in progress",
-
-  "contact_me": "Contact Me",
-  "cv": "Resume",
-
+  "contact_me": "Contacts",
+  "cv": "Download CV",
   "quote": "I’m not a psychopath, I’m a high functioning sociopath.",
   "quote_author": "Sherlock",
-  
   "skills": "skills",
   "skills_langs": "Languages",
   "skills_dbs": "Databases",
   "skills_fws": "Frameworks",
   "skills_tools": "Tools",
-
   "projects_title": "projects",
   "view_all": "View all",
-
-
+  "about_description": "I’m a full-stack and Python developer based in Almaty, Kazakhstan. Just starting my journey in web development, but I approach every project with passion, responsibility, and attention to detail.",
+  "about_description2": "I aim to turn ideas into clean, modern, and user-friendly web experiences. Constantly learning new tools and technologies to grow as a full-stack developer.",
   "contacts": "contacts",
-  "contacts_description": "I'm open to freelance opportunities. If you have any questions, project ideas, or just want to connect — feel free to reach out!",
-
-
+  "contacts_description": "I'm just starting my journey as a developer and open to new projects or collaborations. Feel free to reach out if you'd like to work together or simply connect!",
+  "message_me": "Message me here",
+  "form_name": "Your Name",
+  "form_email": "Your Email",
+  "form_message": "Your Message",
+  "form_send": "Send Message",
+  "form_sending": "Sending...",
+  "form_success": "Message sent successfully!",
+  "form_error": "Failed to send message. Please try again.",
+  "error_name_required": "Name is required",
+  "error_name_min_length": "Name must be at least 2 characters",
+  "error_name_max_length": "Name must not exceed 50 characters",
+  "error_email_required": "Email is required",
+  "error_email_invalid": "Invalid email format",
+  "error_email_max_length": "Email must not exceed 100 characters",
+  "error_message_required": "Message is required",
+  "error_message_min_length": "Message must be at least 10 characters",
+  "error_message_max_length": "Message must not exceed 1000 characters",
   "footer_description": "Full-stack and Python developer from Kazakhstan",
   "copyright": "© 2025 aablty. All rights reserved."
 }

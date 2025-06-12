@@ -8,8 +8,6 @@
   <img alt="repo-language-count" src="https://img.shields.io/github/languages/count/aablty/aablty.github.io?style=flat&color=0080ff">
 </p>
 
----
-
 <p align="center"><em>Built with the tools and technologies:</em></p>
 
 <p align="center">

@@ -71,7 +71,6 @@
 }
 
 .form_message {
-  margin-top: 1rem;
   padding: 0.5rem;
   text-align: center;
   font-size: 0.9rem;
@@ -100,7 +99,7 @@
 }
 
 .form_status {
-  margin-top: 1rem;
+  margin-top: 0.5rem;
 }
 
 .form_group {

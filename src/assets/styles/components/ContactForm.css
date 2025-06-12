@@ -1,13 +1,14 @@
 /* ===== CONTACT FORM ===== */
 .contacts_form {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   justify-items: center;
-  gap: 1rem;
   width: 22rem;
 }
 
 .form_group {
   width: 100%;
+  margin-bottom: 1rem;
 }
 
 .form_input,

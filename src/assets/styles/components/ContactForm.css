@@ -106,6 +106,13 @@
   position: relative;
 }
 
+.form_input,
+.form_textarea {
+  border-radius: 0;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
 /* ===== MEDIA QUERIES ===== */
 @media (max-width: 768px) {
   .contacts_form {

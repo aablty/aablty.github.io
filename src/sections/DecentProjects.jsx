@@ -15,7 +15,7 @@ export default function DecentProjects() {
   const { translations, getTranslation } = useLocale();
   const { data: apiProjects, isLoading, isError } = useProjects();
 
-  const projectsData = apiProjects.filter(
+  const projectsData = apiProjects?.filter(
     (project) => project.type === "decent"
   );
 
@@ -51,7 +51,7 @@ export default function DecentProjects() {
         <Subtitle>{translations.decent}</Subtitle>
       </div>
       <div className="project_list">
-        {projectsData.length > 0 ? (
+        {projectsData?.length > 0 ? (
           projectsData.map((project, index) => (
             <Project
               key={project.id || index}

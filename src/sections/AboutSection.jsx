@@ -27,7 +27,9 @@ export default function AboutSection({ parent }) {
               {translations.about_description2}
             </p>
           </div>
-          <Button href="/#about-me">{translations.view_all}</Button>
+          <Button href="/#about-me" onClick={() => window.scrollTo({ top: 0 })}>
+            {translations.view_all}
+          </Button>
         </div>
         <div className="about_image">
           <img src={about} alt="about" />
@@ -36,7 +38,7 @@ export default function AboutSection({ parent }) {
     );
   } else if (parent === "about-me") {
     return (
-      <section className="about" style={{marginTop: '-4rem'}}>
+      <section className="about" style={{ marginTop: "-4rem" }}>
         <div className="about_image">
           <img src={about} alt="about" style={{ transform: "scaleX(-1)" }} />
         </div>

@@ -47,7 +47,11 @@ export default function ProjectsSection() {
     <section className="projects">
       <div className="projects_header">
         <Subtitle>{translations.projects}</Subtitle>
-        <Link to="/projects" className="projects_link">
+        <Link
+          to="/projects"
+          className="projects_link"
+          onClick={() => window.scrollTo({ top: 0 })}
+        >
           {translations.view_all}
         </Link>
       </div>

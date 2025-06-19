@@ -15,12 +15,12 @@ export default function EducationSection() {
   const {
     data: apiEducation,
     isLoading: educationLoading,
-    error: educationError,
+    isError: educationError,
   } = useEducation();
   const {
     data: apiCertifications,
     isLoading: certificationsLoading,
-    error: certificationsError,
+    isError: certificationsError,
   } = useCertifications();
 
   return (

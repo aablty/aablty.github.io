@@ -16,7 +16,7 @@ import "../assets/styles/sections/IntroSection.css";
 export default function IntroSection() {
   const { translations } = useLocale();
 
-  const { data: cvinfo, error } = useCVInfo();
+  const { data: cvinfo, isError } = useCVInfo();
 
   const handleScrollToContacts = (e) => {
     e.preventDefault();
@@ -50,7 +50,7 @@ export default function IntroSection() {
           <Button onClick={handleScrollToContacts}>
             {translations.contact_me}
           </Button>
-          {cvinfo.exists && !error ? (
+          {cvinfo?.exists && !isError ? (
             <Button
               color="gray"
               href={`${cvinfo.download_url}`}

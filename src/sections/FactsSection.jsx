@@ -12,7 +12,7 @@ import "../assets/styles/sections/FactsSection.css";
 
 export default function FactsSection() {
   const { translations, getTranslation } = useLocale();
-  const { facts: apiFacts, isLoading, error } = useFacts();
+  const { data: apiFacts, isLoading, isError } = useFacts();
 
   if (isLoading) {
     return (
@@ -25,7 +25,7 @@ export default function FactsSection() {
     );
   }
 
-  if (error) {
+  if (isError) {
     return (
       <section className="facts">
         <Subtitle>{translations.facts}</Subtitle>
@@ -40,7 +40,7 @@ export default function FactsSection() {
     <section className="facts">
       <Subtitle>{translations.facts}</Subtitle>
       <div className="facts_content">
-        {apiFacts.length > 0 ? (
+        {apiFacts?.length > 0 ? (
           <ul className="facts_list">
             {apiFacts.map((fact, index) => (
               <li key={fact.id || index} className="fact">

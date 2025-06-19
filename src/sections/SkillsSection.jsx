@@ -16,9 +16,9 @@ import "../assets/styles/sections/SkillsSection.css";
 
 export default function SkillsSection({ parent }) {
   const { translations, getTranslation } = useLocale();
-  const { data: apiSkills, isLoading, error } = useSkills();
+  const { data: apiSkills, isLoading, isError } = useSkills();
 
-  const homeSkills = apiSkills.filter((skill) =>
+  const homeSkills = apiSkills?.filter((skill) =>
     ["Languages", "Backend", "Frontend"].includes(skill.title.en)
   );
 
@@ -36,7 +36,7 @@ export default function SkillsSection({ parent }) {
         <div className="skills_loading">
           <p>{translations.loading}</p>
         </div>
-      ) : error ? (
+      ) : isError ? (
         <div className="skills_error">
           <p>{translations.error_loading_skills}</p>
         </div>
@@ -51,7 +51,7 @@ export default function SkillsSection({ parent }) {
             />
           </div>
           <div className="skills_list">
-            {homeSkills.length > 0 ? (
+            {homeSkills?.length > 0 ? (
               homeSkills.map((skill, index) => (
                 <SkillBlock
                   key={skill.id || index}
@@ -66,7 +66,7 @@ export default function SkillsSection({ parent }) {
         </div>
       ) : (
         <div className="skills_content" style={{ gap: "1rem" }}>
-          {apiSkills.length > 0 ? (
+          {apiSkills?.length > 0 ? (
             apiSkills.map((skill, index) => (
               <SkillBlock
                 key={skill.id || index}

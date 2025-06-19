@@ -15,9 +15,9 @@ import "../assets/styles/sections/ProjectsSection.css";
 
 export default function ProjectsSection() {
   const { translations, getTranslation } = useLocale();
-  const { data: apiProjects, loading, error } = useProjects();
+  const { data: apiProjects, isLoading, isError } = useProjects();
 
-  if (loading) {
+  if (isLoading) {
     return (
       <section className="projects">
         <div className="projects_header">
@@ -30,7 +30,7 @@ export default function ProjectsSection() {
     );
   }
 
-  if (error) {
+  if (isError) {
     return (
       <section className="projects">
         <div className="projects_header">
@@ -52,7 +52,7 @@ export default function ProjectsSection() {
         </Link>
       </div>
       <div className="project_list">
-        {apiProjects.length > 0 ? (
+        {apiProjects?.length > 0 ? (
           apiProjects
             .slice(0, 3)
             .map((project, index) => (

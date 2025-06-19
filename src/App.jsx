@@ -13,7 +13,17 @@ import { Header, Footer } from "./components";
 // Pages
 import { Projects, AboutMe, Home } from "./pages";
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 1000 * 60 * 5,
+      gcTime: 1000 * 60 * 30,
+      refetchOnWindowFocus: true,
+      refetchOnMount: true,
+      retry: 1,
+    },
+  },
+});
 
 export default function App() {
   return (

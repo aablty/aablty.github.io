@@ -12,9 +12,9 @@ import "../assets/styles/sections/ProjectsSection.css";
 
 export default function SmallProjects() {
   const { translations, getTranslation } = useLocale();
-  const { data: apiProjects, isLoading, error } = useProjects();
+  const { data: apiProjects, isLoading, isError } = useProjects();
 
-  const projectsData = apiProjects.filter(
+  const projectsData = apiProjects?.filter(
     (project) => project.type === "small"
   );
 
@@ -31,7 +31,7 @@ export default function SmallProjects() {
     );
   }
 
-  if (error) {
+  if (isError) {
     return (
       <section className="projects">
         <div className="projects_header">
@@ -50,7 +50,7 @@ export default function SmallProjects() {
         <Subtitle>{translations.small}</Subtitle>
       </div>
       <div className="project_list">
-        {projectsData.length > 0 ? (
+        {projectsData?.length > 0 ? (
           projectsData.map((project, index) => (
             <Project
               key={project.id || index}

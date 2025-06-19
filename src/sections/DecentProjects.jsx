@@ -13,7 +13,7 @@ import "../assets/styles/sections/ProjectsSection.css";
 
 export default function DecentProjects() {
   const { translations, getTranslation } = useLocale();
-  const { data: apiProjects, isLoading, error } = useProjects();
+  const { data: apiProjects, isLoading, isError } = useProjects();
 
   const projectsData = apiProjects.filter(
     (project) => project.type === "decent"
@@ -32,7 +32,7 @@ export default function DecentProjects() {
     );
   }
 
-  if (error) {
+  if (isError) {
     return (
       <section className="projects">
         <div className="projects_header">

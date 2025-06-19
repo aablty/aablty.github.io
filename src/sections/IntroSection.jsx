@@ -16,7 +16,6 @@ import "../assets/styles/sections/IntroSection.css";
 export default function IntroSection() {
   const { translations } = useLocale();
 
-  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
   const { cvinfo, error } = useCVInfo();
 
   const handleScrollToContacts = (e) => {
@@ -54,7 +53,7 @@ export default function IntroSection() {
           {cvinfo.exists && !error ? (
             <Button
               color="gray"
-              href={`${API_BASE_URL}${cvinfo.download_url}`}
+              href={`${cvinfo.download_url}`}
             >
               {translations.cv}
             </Button>

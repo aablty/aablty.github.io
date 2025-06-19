@@ -10,8 +10,6 @@ import "../assets/styles/components/Project.css";
 export default function Project({ project, getTranslation }) {
   const { translations } = useLocale();
 
-  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
-
   const title = getTranslation(project.title);
   const description = getTranslation(project.description);
   const stack = project.stack || [];
@@ -20,7 +18,7 @@ export default function Project({ project, getTranslation }) {
   return (
     <div className="project">
       <img
-        src={API_BASE_URL + project?.image}
+        src={`${project?.image}`}
         alt={title}
         className="project_image"
       />

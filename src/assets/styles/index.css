@@ -259,7 +259,7 @@ section {
 .projects_error p,
 .facts_loading p,
 .facts_error p,
-.education_lodaing p,
+.education_loading p,
 .education_error p {
   color: var(--gray);
   font-style: italic;

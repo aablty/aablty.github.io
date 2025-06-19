@@ -1,161 +1,122 @@
-import { useState, useEffect } from "react";
 import { api } from "../api/client";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 
 /**
  * Hook for fetching CV
  */
 export function useCVInfo() {
-  const [cvinfo, setCVInfo] = useState([]);
-  const [error, setError] = useState(null);
+  const queryClient = useQueryClient();
 
-  useEffect(() => {
-    const fetchCVInfo = async () => {
-      try {
-        const data = await api.getCVInfo();
-        setCVInfo(data);
-      } catch (err) {
-        setError(err instanceof Error ? err.message : "Unknown error");
-      } 
-    };
-
-    fetchCVInfo();
-  }, []);
-
-  return { cvinfo, error };
+  return useQuery({
+    queryKey: ["cvinfo"],
+    queryFn: api.getCVInfo,
+    staleTime: 0,
+    cacheTime: Infinity,
+    onSuccess: (newData) => {
+      const oldData = queryClient.getQueryData(["cvinfo"]);
+      if (JSON.stringify(newData) !== JSON.stringify(oldData)) {
+        queryClient.setQueryData(["cvinfo"], newData);
+      }
+    },
+  });
 }
 
 /**
  * Hook for fetching projects
  */
 export function useProjects() {
-  const [projects, setProjects] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const queryClient = useQueryClient();
 
-  useEffect(() => {
-    const fetchProjects = async () => {
-      try {
-        setLoading(true);
-        const data = await api.getProjects();
-        setProjects(data);
-      } catch (err) {
-        setError(err instanceof Error ? err.message : "Unknown error");
-      } finally {
-        setLoading(false);
+  return useQuery({
+    queryKey: ["projects"],
+    queryFn: api.getProjects,
+    staleTime: 0,
+    cacheTime: Infinity,
+    onSuccess: (newData) => {
+      const oldData = queryClient.getQueryData(["projects"]);
+      if (JSON.stringify(newData) !== JSON.stringify(oldData)) {
+        queryClient.setQueryData(["projects"], newData);
       }
-    };
-
-    fetchProjects();
-  }, []);
-
-  return { projects, loading, error };
+    },
+  });
 }
 
 /**
  * Hook for fetching skills
  */
 export function useSkills() {
-  const [skills, setSkills] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const queryClient = useQueryClient();
 
-  useEffect(() => {
-    const fetchSkills = async () => {
-      try {
-        setLoading(true);
-        const data = await api.getSkills();
-        setSkills(data);
-      } catch (err) {
-        setError(err instanceof Error ? err.message : "Unknown error");
-      } finally {
-        setLoading(false);
+  return useQuery({
+    queryKey: ["skills"],
+    queryFn: api.getSkills,
+    staleTime: 0,
+    cacheTime: Infinity,
+    onSuccess: (newData) => {
+      const oldData = queryClient.getQueryData(["skills"]);
+      if (JSON.stringify(newData) !== JSON.stringify(oldData)) {
+        queryClient.setQueryData(["skills"], newData);
       }
-    };
-  
-
-    fetchSkills();
-  }, []);
-
-  return { skills, loading, error };
+    },
+  });
 }
 
 /**
  * Hook for fetching facts
  */
 export function useFacts() {
-  const [facts, setFacts] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const queryClient = useQueryClient();
 
-  useEffect(() => {
-    const fetchFacts = async () => {
-      try {
-        setLoading(true);
-        const data = await api.getFacts();
-        setFacts(data);
-      } catch (err) {
-        setError(err instanceof Error ? err.message : "Unknown error");
-      } finally {
-        setLoading(false);
+  return useQuery({
+    queryKey: ["facts"],
+    queryFn: api.getFacts,
+    staleTime: 0,
+    cacheTime: Infinity,
+    onSuccess: (newData) => {
+      const oldData = queryClient.getQueryData(["facts"]);
+      if (JSON.stringify(newData) !== JSON.stringify(oldData)) {
+        queryClient.setQueryData(["facts"], newData);
       }
-    };
-
-    fetchFacts();
-  }, []);
-
-  return { facts, loading, error };
+    },
+  });
 }
 
 /**
  * Hook for fetching education records
  */
 export function useEducation() {
-  const [education, setEducation] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const queryClient = useQueryClient();
 
-  useEffect(() => {
-    const fetchEducation = async () => {
-      try {
-        setLoading(true);
-        const data = await api.getEducation();
-        setEducation(data);
-      } catch (err) {
-        setError(err instanceof Error ? err.message : "Unknown error");
-      } finally {
-        setLoading(false);
+  return useQuery({
+    queryKey: ["education"],
+    queryFn: api.getEducation,
+    staleTime: 0,
+    cacheTime: Infinity,
+    onSuccess: (newData) => {
+      const oldData = queryClient.getQueryData(["education"]);
+      if (JSON.stringify(newData) !== JSON.stringify(oldData)) {
+        queryClient.setQueryData(["education"], newData);
       }
-    };
-
-    fetchEducation();
-  }, []);
-
-  return { education, loading, error };
+    },
+  });
 }
 
 /**
  * Hook for fetching certifications
  */
 export function useCertifications() {
-  const [certifications, setCertifications] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const queryClient = useQueryClient();
 
-  useEffect(() => {
-    const fetchCertifications = async () => {
-      try {
-        setLoading(true);
-        const data = await api.getCertifications();
-        setCertifications(data);
-      } catch (err) {
-        setError(err instanceof Error ? err.message : "Unknown error");
-      } finally {
-        setLoading(false);
+  return useQuery({
+    queryKey: ["certifications"],
+    queryFn: api.getCertifications,
+    staleTime: 0,
+    cacheTime: Infinity,
+    onSuccess: (newData) => {
+      const oldData = queryClient.getQueryData(["certifications"]);
+      if (JSON.stringify(newData) !== JSON.stringify(oldData)) {
+        queryClient.setQueryData(["certifications"], newData);
       }
-    };
-
-    fetchCertifications();
-  }, []);
-
-  return { certifications, loading, error };
+    },
+  });
 }

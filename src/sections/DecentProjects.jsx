@@ -13,13 +13,13 @@ import "../assets/styles/sections/ProjectsSection.css";
 
 export default function DecentProjects() {
   const { translations, getTranslation } = useLocale();
-  const { projects: apiProjects, loading, error } = useProjects();
+  const { data: apiProjects, isLoading, error } = useProjects();
 
   const projectsData = apiProjects.filter(
     (project) => project.type === "decent"
   );
 
-  if (loading) {
+  if (isLoading) {
     return (
       <section className="projects">
         <div className="projects_header">

@@ -13,13 +13,13 @@ import "../assets/styles/sections/EducationSection.css";
 export default function EducationSection() {
   const { translations, getTranslation, formatYearRange } = useLocale();
   const {
-    education: apiEducation,
-    loading: educationLoading,
+    data: apiEducation,
+    isLoading: educationLoading,
     error: educationError,
   } = useEducation();
   const {
-    certifications: apiCertifications,
-    loading: certificationsLoading,
+    data: apiCertifications,
+    isLoading: certificationsLoading,
     error: certificationsError,
   } = useCertifications();
 

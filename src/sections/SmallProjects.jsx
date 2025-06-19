@@ -12,13 +12,13 @@ import "../assets/styles/sections/ProjectsSection.css";
 
 export default function SmallProjects() {
   const { translations, getTranslation } = useLocale();
-  const { projects: apiProjects, loading, error } = useProjects();
+  const { data: apiProjects, isLoading, error } = useProjects();
 
   const projectsData = apiProjects.filter(
     (project) => project.type === "small"
   );
 
-  if (loading) {
+  if (isLoading) {
     return (
       <section className="projects">
         <div className="projects_header">

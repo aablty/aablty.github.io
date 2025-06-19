@@ -12,9 +12,9 @@ import "../assets/styles/sections/FactsSection.css";
 
 export default function FactsSection() {
   const { translations, getTranslation } = useLocale();
-  const { facts: apiFacts, loading, error } = useFacts();
+  const { facts: apiFacts, isLoading, error } = useFacts();
 
-  if (loading) {
+  if (isLoading) {
     return (
       <section className="facts">
         <Subtitle>{translations.facts}</Subtitle>

@@ -15,7 +15,7 @@ import "../assets/styles/sections/ProjectsSection.css";
 
 export default function ProjectsSection() {
   const { translations, getTranslation } = useLocale();
-  const { projects: apiProjects, loading, error } = useProjects();
+  const { data: apiProjects, loading, error } = useProjects();
 
   if (loading) {
     return (

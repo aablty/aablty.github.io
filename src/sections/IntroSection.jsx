@@ -16,7 +16,7 @@ import "../assets/styles/sections/IntroSection.css";
 export default function IntroSection() {
   const { translations } = useLocale();
 
-  const { cvinfo, error } = useCVInfo();
+  const { data: cvinfo, error } = useCVInfo();
 
   const handleScrollToContacts = (e) => {
     e.preventDefault();

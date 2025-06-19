@@ -16,7 +16,7 @@ import "../assets/styles/sections/SkillsSection.css";
 
 export default function SkillsSection({ parent }) {
   const { translations, getTranslation } = useLocale();
-  const { skills: apiSkills, loading, error } = useSkills();
+  const { data: apiSkills, isLoading, error } = useSkills();
 
   const homeSkills = apiSkills.filter((skill) =>
     ["Languages", "Backend", "Frontend"].includes(skill.title.en)
@@ -32,7 +32,7 @@ export default function SkillsSection({ parent }) {
           </Link>
         ) : null}
       </div>
-      {loading ? (
+      {isLoading ? (
         <div className="skills_loading">
           <p>{translations.loading}</p>
         </div>

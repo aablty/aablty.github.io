@@ -32,11 +32,17 @@ export default function EducationSection() {
             {translations.formal_education}
           </h3>
           {educationLoading ? (
-            <p>{translations.loading}</p>
+            <div className="education_loading">
+              <p>{translations.loading}</p>
+            </div>
           ) : educationError ? (
-            <p>{translations.error_loading_education}</p>
+            <div className="education_error">
+              <p>{translations.error_loading_education}</p>
+            </div>
           ) : !apiEducation.length ? (
-            <p className="empty_list">{translations.education_empty}</p>
+            <div className="empty_list">
+              <p className="empty_list">{translations.education_empty}</p>
+            </div>
           ) : (
             <div className="education_list">
               {apiEducation.map((edu, index) => {
@@ -73,11 +79,17 @@ export default function EducationSection() {
             {translations.certifications_courses}
           </h3>
           {certificationsLoading ? (
-            <p>{translations.loading}</p>
+            <div className="education_loading">
+              <p>{translations.loading}</p>
+            </div>
           ) : certificationsError ? (
-            <p>{translations.error_loading_certification}</p>
+            <div className="education_error">
+              <p>{translations.error_loading_certification}</p>
+            </div>
           ) : !apiCertifications.length ? (
-            <p className="empty_list">{translations.certifications_empty}</p>
+            <div className="empty_list">
+              <p>{translations.certifications_empty}</p>
+            </div>
           ) : (
             <div className="education_list">
               {apiCertifications.map((cert, index) => {

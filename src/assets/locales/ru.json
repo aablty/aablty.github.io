@@ -53,6 +53,8 @@
   "error_loading_projects": "Ошибка загрузки проектов",
   "error_loading_skills": "Ошибка загрузки навыков",
   "error_loading_facts": "Ошибка загрузки фактов",
+  "error_loading_education": "Ошибка загрузки образования",
+  "error_loading_certification": "Ошибка загрузки сертификатов",
   "no_stack": "Стэк не указан",
   "no_links": "Ссылки не указаны",
   "skills_empty": "Навыки пока не добавлены",

@@ -53,6 +53,8 @@
   "error_loading_projects": "Error loading projects",
   "error_loading_skills": "Error loading skills",
   "error_loading_facts": "Error loading facts",
+  "error_loading_education": "Error loading education",
+  "error_loading_certification": "Error loading certification",
   "no_stack": "Stack not specified",
   "no_links": "Links not specified",
   "skills_empty": "No skills added yet",

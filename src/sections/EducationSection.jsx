@@ -23,7 +23,6 @@ export default function EducationSection() {
     error: certificationsError,
   } = useCertifications();
 
-
   return (
     <section className="education">
       <Subtitle>{translations.education}</Subtitle>
@@ -32,7 +31,11 @@ export default function EducationSection() {
           <h3 className="education_subsection_title">
             {translations.formal_education}
           </h3>
-          {!apiEducation.length ? (
+          {educationLoading ? (
+            <p>{translations.loading}</p>
+          ) : educationError ? (
+            <p>{translations.error_loading_education}</p>
+          ) : !apiEducation.length ? (
             <p className="empty_list">{translations.education_empty}</p>
           ) : (
             <div className="education_list">
@@ -41,10 +44,7 @@ export default function EducationSection() {
                   <div key={index} className="education_item">
                     <div className="education_period">
                       <span className="education_years">
-                        {formatYearRange(
-                          edu.start_year,
-                          edu.end_year
-                        )}
+                        {formatYearRange(edu.start_year, edu.end_year)}
                       </span>
                       <span className="education_status">
                         {getTranslation(edu.status)}
@@ -72,7 +72,11 @@ export default function EducationSection() {
           <h3 className="education_subsection_title">
             {translations.certifications_courses}
           </h3>
-          {!apiCertifications.length ? (
+          {certificationsLoading ? (
+            <p>{translations.loading}</p>
+          ) : certificationsError ? (
+            <p>{translations.error_loading_certification}</p>
+          ) : !apiCertifications.length ? (
             <p className="empty_list">{translations.certifications_empty}</p>
           ) : (
             <div className="education_list">

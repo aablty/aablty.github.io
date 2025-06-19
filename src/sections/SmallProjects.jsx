@@ -1,17 +1,48 @@
 // Contexts
 import { useLocale } from "../contexts";
 
+// Hooks
+import { useProjects } from "../hooks";
+
 // Components
 import { Subtitle, Project } from "../components";
-
-// Utils
-import { small } from "../utils/constants";
 
 // Styles
 import "../assets/styles/sections/ProjectsSection.css";
 
 export default function SmallProjects() {
-  const { translations } = useLocale();
+  const { translations, getTranslation } = useLocale();
+  const { projects: apiProjects, loading, error } = useProjects();
+
+  const projectsData = apiProjects.filter(
+    (project) => project.type === "small"
+  );
+
+  if (loading) {
+    return (
+      <section className="projects">
+        <div className="projects_header">
+          <Subtitle>{translations.small}</Subtitle>
+        </div>
+        <div className="projects_loading">
+          <p>{translations.loading}</p>
+        </div>
+      </section>
+    );
+  }
+
+  if (error) {
+    return (
+      <section className="projects">
+        <div className="projects_header">
+          <Subtitle>{translations.projects}</Subtitle>
+        </div>
+        <div className="projects_error">
+          <p>{translations.error_loading_projects}</p>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className="projects">
@@ -19,12 +50,16 @@ export default function SmallProjects() {
         <Subtitle>{translations.small}</Subtitle>
       </div>
       <div className="project_list">
-        {small.length > 0 ? (
-          small.map((project, index) => (
-            <Project key={index} project={project} />
+        {projectsData.length > 0 ? (
+          projectsData.map((project, index) => (
+            <Project
+              key={project.id || index}
+              project={project}
+              getTranslation={getTranslation}
+            />
           ))
         ) : (
-          <p style={{ color: "var(--gray)" }}>{translations.no_projects}</p>
+          <p className="empty_list">{translations.no_projects}</p>
         )}
       </div>
     </section>

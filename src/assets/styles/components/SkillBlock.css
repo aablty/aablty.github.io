@@ -34,6 +34,17 @@
   margin-right: 4px;
 }
 
+.skill-block_item.empty {
+  color: var(--gray);
+  font-style: italic;
+  text-align: center;
+  width: 100%;
+}
+
+.skill-block_item.empty::before {
+  content: "";
+}
+
 /* ===== MEDIA QUERIES ===== */
 @media (max-width: 768px) {
   .skill-block {

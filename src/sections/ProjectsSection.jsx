@@ -1,33 +1,70 @@
 // React Router
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 // Contexts
 import { useLocale } from "../contexts";
 
+// Hooks
+import { useProjects } from "../hooks";
+
 // Components
 import { Subtitle, Project } from "../components";
-
-// Utils
-import { projects } from "../utils/constants";
 
 // Styles
 import "../assets/styles/sections/ProjectsSection.css";
 
 export default function ProjectsSection() {
-  const { translations } = useLocale();
+  const { translations, getTranslation } = useLocale();
+  const { projects: apiProjects, loading, error } = useProjects();
+
+  if (loading) {
+    return (
+      <section className="projects">
+        <div className="projects_header">
+          <Subtitle>{translations.projects}</Subtitle>
+        </div>
+        <div className="projects_loading">
+          <p>{translations.loading}</p>
+        </div>
+      </section>
+    );
+  }
+
+  if (error) {
+    return (
+      <section className="projects">
+        <div className="projects_header">
+          <Subtitle>{translations.projects}</Subtitle>
+        </div>
+        <div className="projects_error">
+          <p>{translations.error_loading_projects}</p>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className="projects">
       <div className="projects_header">
         <Subtitle>{translations.projects}</Subtitle>
-        <NavLink to="/projects" className="projects_link">
+        <Link to="/projects" className="projects_link">
           {translations.view_all}
-        </NavLink>
+        </Link>
       </div>
       <div className="project_list">
-        {projects.map((project, index) => (
-          <Project key={index} project={project} />
-        )) || <p>{translations.no_projects}</p>}
+        {apiProjects.length > 0 ? (
+          apiProjects
+            .slice(0, 3)
+            .map((project, index) => (
+              <Project
+                key={project.id || index}
+                project={project}
+                getTranslation={getTranslation}
+              />
+            ))
+        ) : (
+          <p className="empty_list">{translations.no_projects}</p>
+        )}
       </div>
     </section>
   );

@@ -1,40 +1,55 @@
+// Contexts
+import { useLocale } from "../contexts";
+
 // Components
 import Button from "./Button";
 
 // Styles
 import "../assets/styles/components/Project.css";
 
-export default function Project({ project }) {
+export default function Project({ project, getTranslation }) {
+  const { translations } = useLocale();
+
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+
+  const title = getTranslation(project.title);
+  const description = getTranslation(project.description);
+  const stack = project.stack || [];
+  const projectLinks = project.links || [];
+
   return (
     <div className="project">
       <img
-        src={
-          project?.image ||
-          "placeholder url"
-        }
-        alt={project.name}
+        src={API_BASE_URL + project?.image}
+        alt={title}
         className="project_image"
       />
       <ul className="project_stack">
-        {project?.stack?.map((item, index) => <li key={index}>{item}</li>) || (
-          <li>No stack provided</li>
+        {stack.length > 0 ? (
+          stack.map((item, index) => <li key={index}>{item}</li>)
+        ) : (
+          <li>{translations.no_stack}</li>
         )}
       </ul>
       <div className="project_content">
-        <div className="project_name">{project.name}</div>
-        <div className="project_description">{project.description}</div>
+        <div className="project_name">{title}</div>
+        <div className="project_description">{description}</div>
         <div className="project_links">
-          {project?.links?.map((link, index) => (
-            <Button
-              key={index}
-              href={link.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="project_link"
-            >
-              {link.label}
-            </Button>
-          )) || <span>No links provided</span>}
+          {projectLinks.length > 0 ? (
+            projectLinks.map((link, index) => (
+              <Button
+                key={index}
+                href={link.link || link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="project_link"
+              >
+                {link.label}
+              </Button>
+            ))
+          ) : (
+            <Button disabled>{translations.no_links}</Button>
+          )}
         </div>
       </div>
     </div>

@@ -8,9 +8,6 @@ import { useLocale } from "../contexts";
 // Components
 import LocaleSwitcher from "./LocaleSwitcher";
 
-// Utils
-import { navLinks } from "../utils";
-
 // Assets
 import logo from "../assets/images/logo.svg";
 import telegram from "../assets/images/telegram.svg";
@@ -23,6 +20,13 @@ import "../assets/styles/components/Header.css";
 export default function Header() {
   const { locale, translations, switchLocale } = useLocale();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  // ===== ROUTE CONFIGURATION =====
+  const navs = [
+    { to: "/", labelKey: "home" },
+    { to: "/projects", labelKey: "projects" },
+    { to: "/about-me", labelKey: "about_me" },
+  ];
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -42,7 +46,7 @@ export default function Header() {
           </a>
           {/* Desktop Navigation */}
           <nav className="header_nav">
-            {navLinks.map(({ to, labelKey }) => (
+            {navs.map(({ to, labelKey }) => (
               <NavLink
                 key={to}
                 to={to}
@@ -68,7 +72,7 @@ export default function Header() {
           {/* Mobile Menu */}
           <div className={`mobile_menu ${isMenuOpen ? "open" : ""}`}>
             <nav className="mobile_nav">
-              {navLinks.map(({ to, labelKey }) => (
+              {navs.map(({ to, labelKey }) => (
                 <NavLink
                   key={to}
                   to={to}

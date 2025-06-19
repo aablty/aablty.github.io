@@ -34,13 +34,13 @@
 
 .form_input_error,
 .form_textarea_error {
-  border-color: #ff6b6b;
+  border-color: var(--error);
   box-shadow: 0 0 0 2px rgba(255, 107, 107, 0.2);
 }
 
 .form_input_error:focus,
 .form_textarea_error:focus {
-  border-color: #ff6b6b;
+  border-color: var(--error);
   box-shadow: 0 0 0 2px rgba(255, 107, 107, 0.3);
 }
 
@@ -84,14 +84,14 @@
 }
 
 .form_message.error {
-  color: #ff6b6b;
-  border: 1px solid #ff6b6b;
+  color: var(--error);
+  border: 1px solid var(--error);
   background-color: rgba(255, 107, 107, 0.1);
 }
 
 .form_error {
   display: block;
-  color: #ff6b6b;
+  color: var(--error);
   font-size: 0.8rem;
   margin-top: 0.25rem;
   margin-bottom: 0.5rem;

@@ -10,15 +10,15 @@ import { useForm, useFormValidation, useFormSubmit } from "../hooks";
 // Components
 import { FormFieldError, FormSubmitStatus } from "./";
 
-// Services
-import { sendTelegramMessage } from "../services";
+// API
+import { api } from "../api";
 
 // Config
 import {
   CONTACT_FORM_VALIDATION_RULES,
   CONTACT_FORM_INITIAL_VALUES,
   CONTACT_FORM_FIELDS,
-} from "../config/contactFormConfig";
+} from "../config";
 
 // Styles
 import "../assets/styles/components/ContactForm.css";
@@ -33,14 +33,7 @@ export default function ContactForm() {
     useFormValidation(CONTACT_FORM_VALIDATION_RULES, translations);
 
   const submitFormData = useCallback(async (formData) => {
-    const message = `
-🔔 New message from website:
-- Name: ${formData.name}
-- Email: ${formData.email}
-- Message: ${formData.message}
-    `.trim();
-
-    return await sendTelegramMessage(message);
+    return await api.sendForm(formData.name, formData.email, formData.message);
   }, []);
 
   const { submitStatus, handleSubmit: submitForm } = useFormSubmit(
@@ -121,7 +114,7 @@ export default function ContactForm() {
       className="contacts_form"
       onSubmit={handleSubmit}
       noValidate
-      aria-label={translations.contacts || "Contact form"}
+      aria-label={translations.contacts}
     >
       {CONTACT_FORM_FIELDS.map(renderField)}
 

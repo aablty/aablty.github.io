@@ -1,6 +1,9 @@
 // Contexts
 import { useLocale } from "../contexts";
 
+// Hooks
+import { useEducation, useCertifications } from "../hooks";
+
 // Components
 import { Subtitle } from "../components";
 
@@ -8,27 +11,18 @@ import { Subtitle } from "../components";
 import "../assets/styles/sections/EducationSection.css";
 
 export default function EducationSection() {
-  const { translations } = useLocale();
+  const { translations, getTranslation, formatYearRange } = useLocale();
+  const {
+    education: apiEducation,
+    loading: educationLoading,
+    error: educationError,
+  } = useEducation();
+  const {
+    certifications: apiCertifications,
+    loading: certificationsLoading,
+    error: certificationsError,
+  } = useCertifications();
 
-  const educationData = [
-    {
-      institution: "Kazakh-British Technical University",
-      degree: translations.bachelor_degree,
-      startYear: "2024",
-      endYear: "2028",
-      status: translations.current_student,
-      location: translations.location_almaty,
-    },
-  ];
-
-  const certificationsData = [
-    // {
-    //   name: "Python Programming",
-    //   provider: "Coursera",
-    //   year: "2023",
-    //   status: translations.completed,
-    // },
-  ];
 
   return (
     <section className="education">
@@ -38,25 +32,38 @@ export default function EducationSection() {
           <h3 className="education_subsection_title">
             {translations.formal_education}
           </h3>
-          {!educationData.length ? (
+          {!apiEducation.length ? (
             <p className="empty_list">{translations.education_empty}</p>
           ) : (
             <div className="education_list">
-              {educationData.map((edu, index) => (
-                <div key={index} className="education_item">
-                  <div className="education_period">
-                    <span className="education_years">
-                      {edu.startYear} - {edu.endYear}
-                    </span>
-                    <span className="education_status">{edu.status}</span>
+              {apiEducation.map((edu, index) => {
+                return (
+                  <div key={index} className="education_item">
+                    <div className="education_period">
+                      <span className="education_years">
+                        {formatYearRange(
+                          edu.start_year,
+                          edu.end_year
+                        )}
+                      </span>
+                      <span className="education_status">
+                        {getTranslation(edu.status)}
+                      </span>
+                    </div>
+                    <div className="education_details">
+                      <h4 className="education_institution">
+                        {getTranslation(edu.institution)}
+                      </h4>
+                      <p className="education_degree">
+                        {getTranslation(edu.degree)}
+                      </p>
+                      <p className="education_location">
+                        {getTranslation(edu.location)}
+                      </p>
+                    </div>
                   </div>
-                  <div className="education_details">
-                    <h4 className="education_institution">{edu.institution}</h4>
-                    <p className="education_degree">{edu.degree}</p>
-                    <p className="education_location">{edu.location}</p>
-                  </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           )}
         </div>
@@ -65,22 +72,30 @@ export default function EducationSection() {
           <h3 className="education_subsection_title">
             {translations.certifications_courses}
           </h3>
-          {!certificationsData.length ? (
+          {!apiCertifications.length ? (
             <p className="empty_list">{translations.certifications_empty}</p>
           ) : (
             <div className="education_list">
-              {certificationsData.map((cert, index) => (
-                <div key={index} className="education_item">
-                  <div className="education_period">
-                    <span className="education_years">{cert.year}</span>
-                    <span className="education_status">{cert.status}</span>
+              {apiCertifications.map((cert, index) => {
+                return (
+                  <div key={index} className="education_item">
+                    <div className="education_period">
+                      <span className="education_years">{cert.year}</span>
+                      <span className="education_status">
+                        {getTranslation(cert.status)}
+                      </span>
+                    </div>
+                    <div className="education_details">
+                      <h4 className="education_institution">
+                        {getTranslation(cert.name)}
+                      </h4>
+                      <p className="education_degree">
+                        {getTranslation(cert.provider)}
+                      </p>
+                    </div>
                   </div>
-                  <div className="education_details">
-                    <h4 className="education_institution">{cert.name}</h4>
-                    <p className="education_degree">{cert.provider}</p>
-                  </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           )}
         </div>

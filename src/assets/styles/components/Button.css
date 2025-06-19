@@ -18,7 +18,7 @@
 }
 
 .button.primary::after {
-  content: " ->"
+  content: " ->";
 }
 
 .button.primary:hover {
@@ -31,4 +31,22 @@
 
 .button.gray:hover {
   background-color: var(--gray-op);
+}
+
+/* ===== DISABLED STATE ===== */
+.button:disabled,
+.button[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.button:disabled:hover,
+.button[disabled]:hover {
+  background-color: transparent;
+}
+
+.button:disabled::after,
+.button[disabled]::after {
+  content: "";
 }

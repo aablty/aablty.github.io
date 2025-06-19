@@ -88,16 +88,18 @@
 }
 
 :root {
-  --background: hsl(218 12% 18%);
-  --background-op: hsl(218 12% 18%/0.95);
+  --background: hsl(218 12 18);
+  --background-op: hsl(218 12 18/0.95);
 
-  --primary: hsl(91 91% 74%);
-  --primary-op: hsl(91 91% 74%/0.1);
+  --primary: hsl(91 91 74);
+  --primary-op: hsl(91 91 74/0.1);
 
-  --gray: hsl(219 14% 71%);
-  --gray-op: hsl(219 14% 71%/0.1);
+  --gray: hsl(219 14 71);
+  --gray-op: hsl(219 14 71/0.1);
 
-  --white: hsl(0 0% 100%);
+  --white: hsl(0 0 100);
+
+  --error: hsl(0 100 71);
 
   font-family: "JetBrains Mono", monospace;
   line-height: 1.5;
@@ -247,4 +249,24 @@ section {
     transform-origin: top left;
     width: 350px;
   }
+}
+
+/* ===== GLOBAL LOADING AND ERROR STYLES ===== */
+.empty_list,
+.skills_loading p,
+.skills_error p,
+.projects_loading p,
+.projects_error p,
+.facts_loading p,
+.facts_error p {
+  color: var(--gray);
+  font-style: italic;
+  padding: 16px;
+  text-align: center;
+}
+
+.skills_error p,
+.projects_error p,
+.facts_error p {
+  color: var(--error);
 }

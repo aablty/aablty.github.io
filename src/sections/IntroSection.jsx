@@ -1,6 +1,9 @@
 // Contexts
 import { useLocale } from "../contexts";
 
+// Hooks
+import { useCVInfo } from "../hooks";
+
 // Components
 import { Button } from "../components";
 
@@ -13,14 +16,14 @@ import "../assets/styles/sections/IntroSection.css";
 export default function IntroSection() {
   const { translations } = useLocale();
 
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+  const { cvinfo, error } = useCVInfo();
+
   const handleScrollToContacts = (e) => {
     e.preventDefault();
     const element = document.getElementById("contacts");
     if (element) {
-      const headerOffset = 80;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition =
-        elementPosition + window.pageYOffset - headerOffset;
+      const offsetPosition = element.getBoundingClientRect().top;
 
       window.scrollTo({
         top: offsetPosition,
@@ -48,12 +51,16 @@ export default function IntroSection() {
           <Button onClick={handleScrollToContacts}>
             {translations.contact_me}
           </Button>
-          <Button
-            color="gray"
-            href="https://drive.google.com/file/d/1PozYMISDsK4QzWRvSJiMvstRSB_OZh0i"
-          >
-            {translations.cv}
-          </Button>
+          {cvinfo.exists && !error ? (
+            <Button
+              color="gray"
+              href={`${API_BASE_URL}${cvinfo.download_url}`}
+            >
+              {translations.cv}
+            </Button>
+          ) : (
+            <></>
+          )}
         </div>
       </div>
       <div className="intro_composition">

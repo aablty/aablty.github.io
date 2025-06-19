@@ -1,3 +1,9 @@
+// React
+import { useEffect } from "react";
+
+// React Router
+import { useLocation } from "react-router-dom";
+
 // Hooks
 import { useDocumentTitle } from "../hooks";
 
@@ -18,6 +24,27 @@ import {
 export default function AboutMe() {
   useDocumentTitle("about-me");
   const { translations } = useLocale();
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const targetId = location.hash.substring(1);
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+        const headerOffset = 80;
+        const elementPosition = targetElement.getBoundingClientRect().top;
+        const offsetPosition =
+          elementPosition + window.pageYOffset - headerOffset*2;  
+
+        setTimeout(() => {
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth",
+          });
+        }, 100);
+      }
+    }
+  }, [location.hash]); 
 
   return (
     <>

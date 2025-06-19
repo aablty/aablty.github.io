@@ -1,4 +1,27 @@
 /* ===== SKILLS SECTION ===== */
+.skills_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+  gap: 1rem;
+}
+
+.skills_link {
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.skills_link::after {
+  content: " ~~>";
+  font-size: 1rem;
+}
+
+.skills_link:hover {
+  color: var(--primary);
+}
+
 .skills_content {
   display: flex;
   gap: 2rem;
@@ -55,5 +78,17 @@
 @media (max-width: 422px) {
   .skills_list {
     columns: 1;
+  }
+}
+
+
+@media (max-width: 420px) {
+  .skills_link {
+    font-size: 0;
+  }
+
+  .skills_link::after {
+    content: "~~~>";
+    font-size: 1rem;
   }
 }

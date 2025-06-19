@@ -53,6 +53,7 @@ export default function Header() {
                 className={({ isActive }) =>
                   `header_link ${isActive ? "active" : ""}`
                 }
+                onClick={() => window.scrollTo({ top: 0 })}
               >
                 {translations[labelKey]}
               </NavLink>

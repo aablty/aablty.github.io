@@ -80,7 +80,10 @@ export default function Header() {
                   className={({ isActive }) =>
                     `mobile_link ${isActive ? "active" : ""}`
                   }
-                  onClick={closeMenu}
+                  onClick={() => {
+                    closeMenu();
+                    window.scrollTo({ top: 0 });
+                  }}
                 >
                   {translations[labelKey]}
                 </NavLink>

@@ -88,18 +88,18 @@
 }
 
 :root {
-  --background: hsl(218 12 18);
-  --background-op: hsl(218 12 18/0.95);
+  --background: hsl(218, 12%, 18%);
+  --background-op: hsla(218, 12%, 18%, 0.95);
 
-  --primary: hsl(91 91 74);
-  --primary-op: hsl(91 91 74/0.1);
+  --primary: hsl(91, 91%, 74%);
+  --primary-op: hsla(91, 91%, 74%, 0.1);
 
-  --gray: hsl(219 14 71);
-  --gray-op: hsl(219 14 71/0.1);
+  --gray: hsl(219, 14%, 71%);
+  --gray-op: hsla(219, 14%, 71%, 0.1);
 
-  --white: hsl(0 0 100);
+  --white: hsl(0, 0%, 100%);
 
-  --error: hsl(0 100 71);
+  --error: hsl(0, 100%, 71%);
 
   font-family: "JetBrains Mono", monospace;
   line-height: 1.5;

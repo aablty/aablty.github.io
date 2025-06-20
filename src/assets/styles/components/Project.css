@@ -20,13 +20,6 @@
   justify-content: center;
 }
 
-.project_logo {
-  border-bottom: 1px solid var(--gray);
-  aspect-ratio: 16 / 9;
-  height: 100%;
-  padding: 2rem;
-}
-
 
 /* ===== PROJECT CONTENT ===== */
 .project_stack {

@@ -1,3 +1,6 @@
+// Assets
+import globe from "../assets/images/globe.svg";
+
 export default function LocaleSwitcher({ locale, switchLocale }) {
   return (
     <button
@@ -5,7 +8,8 @@ export default function LocaleSwitcher({ locale, switchLocale }) {
       onClick={() => switchLocale(locale === "en" ? "ru" : "en")}
       aria-label="Switch language"
     >
-      {locale.toUpperCase()}
+      <img className="locale_icon" src={globe} alt="locale" />
+      <span>{locale.toUpperCase()}</span>
     </button>
   );
 }

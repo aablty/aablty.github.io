@@ -46,19 +46,25 @@
 }
 
 /* ===== LOCALE SWITCHER ===== */
-.locale {
+button.locale {
+  display: flex;
   position: relative;
   top: 1.5px;
-  width: 2rem;
+  width: 48px;
+  gap: 4px;
   border: none;
   cursor: pointer;
   color: var(--gray);
   background-color: inherit;
-  transition: color 0.2s ease;
 }
 
-.locale:hover {
-  color: var(--white);
+.locale_icon {
+  width: 14px;
+  aspect-ratio: 1;
+}
+
+button.locale:hover {
+  filter: brightness(0) invert(1);
 }
 
 /* ===== HAMBURGER MENU ===== */
@@ -113,8 +119,8 @@
   top: 0;
   right: -100%;
   width: 280px;
-  height: 100vh; 
-  height: 100dvh; 
+  height: 100vh;
+  height: 100dvh;
   background-color: var(--background);
   transition: right 0.3s ease;
   z-index: 1000;
@@ -158,23 +164,22 @@
 
 .mobile_locale {
   display: flex;
+  gap: 4px;
   justify-content: center;
   padding: 1rem 0;
   border-top: 1px solid var(--gray-op);
   border-bottom: 1px solid var(--gray-op);
 }
 
-.mobile_locale .locale {
+.mobile_locale button.locale {
   width: auto;
-  background-color: var(--background);
+  background-color: inherit;
   font-size: 0.9rem;
   color: var(--gray);
-  transition: color 0.2s ease, border-color 0.2s ease;
 }
 
-.mobile_locale .locale:hover {
-  color: var(--white);
-  border-color: var(--primary);
+button.locale:hover {
+  filter: brightness(0) invert(1);
 }
 
 .mobile_social {
@@ -214,7 +219,7 @@
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh; 
+  height: 100vh;
   height: 100dvh;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 999;
@@ -223,7 +228,7 @@
 /* ===== MEDIA QUERIES ===== */
 @media (max-width: 1024px) {
   .header_nav,
-  .locale {
+  button.locale {
     display: none;
   }
 
@@ -232,7 +237,8 @@
   }
 
   /* Show locale switcher in mobile menu */
-  .mobile_locale .locale {
-    display: block;
+  .mobile_locale button.locale {
+    display: flex;
+    gap: 4px;
   }
 }

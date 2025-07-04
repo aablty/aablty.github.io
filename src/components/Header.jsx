@@ -10,7 +10,7 @@ import LocaleSwitcher from "./LocaleSwitcher";
 
 // Assets
 import logo from "../assets/images/logo.svg";
-import telegram from "../assets/images/telegram.svg";
+import linkedin from "../assets/images/linkedin.svg";
 import github from "../assets/images/github.svg";
 import discord from "../assets/images/discord.svg";
 
@@ -96,20 +96,20 @@ export default function Header() {
 
             <div className="mobile_social">
               <a
-                href="https://t.me/aablty"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mobile_social_link"
-              >
-                <img src={telegram} alt="telegram" />
-              </a>
-              <a
                 href="https://github.com/aablty"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mobile_social_link"
               >
                 <img src={github} alt="github" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/aablty/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mobile_social_link"
+              >
+                <img src={linkedin} alt="linkedin" />
               </a>
               <a
                 href="https://discord.com/users/1273224975482097751"

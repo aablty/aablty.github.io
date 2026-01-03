@@ -4,14 +4,12 @@ import { DynamicIcon } from "lucide-react/dynamic";
 
 export function Quote() {
   const { t } = useLanguage();
-  const [quote, setQuote] = useState<(typeof t.quotes)[0] | null>(null);
+  const [q, setQ] = useState<number>(0);
 
   useEffect(() => {
-    const randomQuote = t.quotes[Math.floor(Math.random() * t.quotes.length)];
-    setQuote(randomQuote);
+    const randomQuote = Math.floor(Math.random() * t.quotes.length);
+    setQ(randomQuote);
   }, []);
-
-  if (!quote) return null;
 
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8 border-y border-white/10">
@@ -22,9 +20,9 @@ export function Quote() {
           </div>
           <blockquote className="space-y-6">
             <p className="text-2xl sm:text-3xl lg:text-4xl leading-relaxed italic">
-              "{quote.text}"
+              "{t.quotes[q].text}"
             </p>
-            <footer className="text-lg text-white/60">— {quote.author}</footer>
+            <footer className="text-lg text-white/60">— {t.quotes[q].author}</footer>
           </blockquote>
         </div>
       </div>
